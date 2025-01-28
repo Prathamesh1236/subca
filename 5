@@ -1,4 +1,4 @@
 #!/bin/bash
 openssl ca -config subca.cnf -extensions server_cert -days 375 -notext -md sha256 -in csr/www.shuhari.local.csr.pem -out certs/www.shuhari.local.cert.pem
 scp certs/* pratham@192.168.80.30:/home/pratham/certs/
-echo "go to www "
+echo "go to www , also copy ca certificate then run 6 "
