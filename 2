@@ -3,7 +3,7 @@ sudo apt install openssl -y
 sudo apt install tree -y
 #mkdir subca
 #cd subca
-#cp /home/pratham/subca.cnf /home/pratham/subca/
+#cp /home/shuhari/subca.cnf /home/shuhari/subca/
 mkdir -p csr certs crl newcerts private
 chmod 777 private
 touch index.txt
@@ -13,5 +13,5 @@ echo '1000'>crlnumber
 openssl genrsa -aes256 -out private/subca.key.pem 4096
 chmod 400 private/subca.key.pem
 openssl req -config subca.cnf -new -sha256 -key private/subca.key.pem -out csr/subca.csr.pem
-scp csr/subca.csr.pem pratham@192.168.80.10:/home/pratham/ca/subca/csr
+scp csr/subca.csr.pem shuhari@192.168.80.10:/home/shuhari/ca/subca/csr
 echo 'go to rootca for signing'
